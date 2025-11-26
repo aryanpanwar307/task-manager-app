@@ -1,4 +1,3 @@
-// src/components/TaskList.jsx
 import React, { useCallback } from 'react';
 import { DragDropContext, Droppable } from '@hello-pangea/dnd';
 import { useTasks } from '../context/TaskContext';
@@ -8,7 +7,6 @@ const TaskList = React.memo(() => {
   const { filteredTasks, reorderTasks, filter } = useTasks();
 
   const onDragEnd = useCallback((result) => {
-    // Dropped outside the list
     if (!result.destination) {
       return;
     }

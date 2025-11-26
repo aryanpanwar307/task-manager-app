@@ -1,4 +1,3 @@
-// src/components/TaskItem.jsx
 import React, { useCallback } from 'react';
 import { Draggable } from '@hello-pangea/dnd';
 import { useTasks } from '../context/TaskContext';

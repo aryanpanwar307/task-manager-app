@@ -1,4 +1,3 @@
-// src/components/ThemeToggle.jsx
 import React from 'react';
 import { useTasks } from '../context/TaskContext';
 

@@ -1,10 +1,8 @@
-// src/context/TaskContext.jsx
 import React, { createContext, useContext, useCallback, useMemo } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 const TaskContext = createContext();
 
-// Custom hook to use the TaskContext
 export const useTasks = () => {
   const context = useContext(TaskContext);
   if (!context) {
@@ -18,7 +16,7 @@ export const TaskProvider = ({ children }) => {
   const [filter, setFilter] = useLocalStorage('filter', 'all');
   const [theme, setTheme] = useLocalStorage('theme', 'light');
 
-  // Add a new task (memoized with useCallback)
+
   const addTask = useCallback((taskText) => {
     const newTask = {
       id: Date.now().toString(),
@@ -29,7 +27,6 @@ export const TaskProvider = ({ children }) => {
     setTasks(prevTasks => [...prevTasks, newTask]);
   }, [setTasks]);
 
-  // Toggle task completion
   const toggleTask = useCallback((taskId) => {
     setTasks(prevTasks =>
       prevTasks.map(task =>
@@ -38,12 +35,10 @@ export const TaskProvider = ({ children }) => {
     );
   }, [setTasks]);
 
-  // Delete a task
   const deleteTask = useCallback((taskId) => {
     setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));
   }, [setTasks]);
 
-  // Reorder tasks (for drag and drop)
   const reorderTasks = useCallback((startIndex, endIndex) => {
     setTasks(prevTasks => {
       const result = Array.from(prevTasks);
@@ -53,12 +48,11 @@ export const TaskProvider = ({ children }) => {
     });
   }, [setTasks]);
 
-  // Toggle theme
+
   const toggleTheme = useCallback(() => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
   }, [setTheme]);
 
-  // Get filtered tasks (memoized with useMemo)
   const filteredTasks = useMemo(() => {
     switch (filter) {
       case 'completed':
@@ -71,14 +65,12 @@ export const TaskProvider = ({ children }) => {
     }
   }, [tasks, filter]);
 
-  // Task statistics (memoized)
   const stats = useMemo(() => ({
     total: tasks.length,
     completed: tasks.filter(task => task.completed).length,
     pending: tasks.filter(task => !task.completed).length,
   }), [tasks]);
 
-  // Context value (memoized to prevent unnecessary re-renders)
   const value = useMemo(() => ({
     tasks,
     filteredTasks,

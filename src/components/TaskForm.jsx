@@ -1,4 +1,3 @@
-// src/components/TaskForm.jsx
 import React, { useState, useCallback } from 'react';
 import { useTasks } from '../context/TaskContext';
 
@@ -10,7 +9,6 @@ const TaskForm = React.memo(() => {
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
     
-    // Form validation - prevent empty tasks
     const trimmedValue = inputValue.trim();
     if (!trimmedValue) {
       setError('Task cannot be empty!');

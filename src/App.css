@@ -1,11 +1,4 @@
-/* src/App.css */
-
-/* ============================================
-   CSS VARIABLES - THEMING SYSTEM
-   ============================================ */
-
 :root {
-  /* Light Theme Colors */
   --bg-primary: #f8f9fa;
   --bg-secondary: #ffffff;
   --bg-tertiary: #f1f3f5;
@@ -66,9 +59,7 @@
   --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* ============================================
-   GLOBAL STYLES & RESET
-   ============================================ */
+
 
 * {
   margin: 0;
@@ -88,9 +79,7 @@ body {
   line-height: 1.6;
 }
 
-/* ============================================
-   APP CONTAINER & LAYOUT
-   ============================================ */
+
 
 .app-container {
   min-height: 100vh;
@@ -119,9 +108,7 @@ body {
   }
 }
 
-/* ============================================
-   HEADER SECTION
-   ============================================ */
+
 
 .app-header {
   margin-bottom: 2rem;
@@ -180,9 +167,7 @@ body {
   margin-left: 3.25rem;
 }
 
-/* ============================================
-   THEME TOGGLE
-   ============================================ */
+
 
 .theme-toggle {
   display: flex;
@@ -244,9 +229,7 @@ body {
   min-width: 40px;
 }
 
-/* ============================================
-   MAIN CONTENT AREA
-   ============================================ */
+
 
 .app-main {
   flex: 1;
@@ -262,9 +245,7 @@ body {
   transition: all var(--transition-slow);
 }
 
-/* ============================================
-   TASK FORM
-   ============================================ */
+
 
 .task-form {
   margin-bottom: 2rem;
@@ -370,10 +351,6 @@ body {
   }
 }
 
-/* ============================================
-   FILTER SECTION
-   ============================================ */
-
 .filter-section {
   margin-bottom: 1.5rem;
   animation: fadeIn 0.8s ease;
@@ -464,9 +441,6 @@ body {
   color: var(--border-color);
 }
 
-/* ============================================
-   TASK LIST
-   ============================================ */
 
 .task-list {
   display: flex;
@@ -482,9 +456,6 @@ body {
   padding: 0.5rem;
 }
 
-/* ============================================
-   TASK ITEM
-   ============================================ */
 
 .task-item {
   display: flex;
@@ -655,9 +626,7 @@ body {
   height: 20px;
 }
 
-/* ============================================
-   EMPTY STATE
-   ============================================ */
+
 
 .empty-state {
   display: flex;
@@ -689,9 +658,7 @@ body {
   color: var(--text-tertiary);
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
+
 
 .app-footer {
   text-align: center;
@@ -712,9 +679,7 @@ body {
   20%, 40% { transform: scale(1); }
 }
 
-/* ============================================
-   RESPONSIVE DESIGN - MOBILE FIRST
-   ============================================ */
+
 
 @media (max-width: 768px) {
   .app-container {
@@ -805,9 +770,7 @@ body {
   }
 }
 
-/* ============================================
-   ACCESSIBILITY
-   ============================================ */
+
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -819,15 +782,12 @@ body {
   }
 }
 
-/* Focus visible for keyboard navigation */
+
 *:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
-/* ============================================
-   SCROLLBAR STYLING
-   ============================================ */
 
 ::-webkit-scrollbar {
   width: 10px;

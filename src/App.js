@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useEffect } from 'react';
 import { TaskProvider, useTasks } from './context/TaskContext';
 import TaskForm from './components/TaskForm';
@@ -10,7 +9,6 @@ import './App.css';
 const AppContent = () => {
   const { theme } = useTasks();
 
-  // Apply theme to document
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
