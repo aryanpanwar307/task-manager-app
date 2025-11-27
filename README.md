@@ -1,70 +1,184 @@
-# Getting Started with Create React App
+# Task Manager App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A clean Task Manager web application built using **React**, featuring:
 
-## Available Scripts
+* Drag and Drop task management using `@hello-pangea/dnd`
+* Column-based workflow (To Do → In Progress → Done)
+* Responsive UI, Dark Theme and Animations
+* Create, move, and delete tasks
+* Deployed on Vercel
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🔗 **[https://limetray-taskmanager.vercel.app/](https://limetray-taskmanager.vercel.app/)**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Click the link above to try the application.
+<img width="732" height="589" alt="Screenshot 2025-11-26 202654" src="https://github.com/user-attachments/assets/dcbde597-5010-49a4-b2f9-bd824c640b90" />
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🖼️ Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ✅ Basic Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Add tasks
+* Mark tasks as completed
+* Delete tasks
+* Filter tasks (All, Completed, Pending)
+* Persist tasks using Local Storage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ✅ Advanced React Features
 
-### `npm run eject`
+* Custom `useLocalStorage` hook
+* Global state using **Context API** (no prop drilling)
+* Performance optimizations:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  * `React.memo`
+  * `useCallback`
+  * `useMemo`
+* Form validation (prevent empty task submissions)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### ✅ UI & CSS Enhancements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Dark / Light mode toggle (theming)
+* Smooth animations for adding/removing tasks
+* Fully responsive design (mobile-first)
+* Drag and drop tasks using `@hello-pangea/dnd`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Frontend:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* React 19
+* @hello-pangea/dnd (React Beautiful DnD maintained fork)
+* CSS / Flexbox
+* react-scripts (CRA)
 
-### Code Splitting
+**Deployment:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Vercel
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## ⚠️ Why @hello-pangea/dnd?
 
-### Making a Progressive Web App
+The original `react-beautiful-dnd` library:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* does not support React 19
+* is no longer maintained
+* causes installation conflicts
 
-### Advanced Configuration
+`@hello-pangea/dnd` is:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* actively maintained
+* fully compatible with React 18/19
+* API compatible with react-beautiful-dnd
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📦 Installation
 
-### `npm run build` fails to minify
+Clone the repository and install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm install
+```
+
+Install drag and drop library:
+
+```bash
+npm install @hello-pangea/dnd
+```
+
+---
+
+## ▶️ Run Locally
+
+```bash
+npm start
+```
+
+The app will run at:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🧱 Folder Structure
+
+```
+src/
+│
+├── components/
+│   ├── FilterButtons.jsx
+│   ├── TaskForm.jsx
+│   ├── TaskItem.jsx
+│   ├── TaskList.jsx
+│   ├── ThemeToggle.jsx
+│
+├── context/
+│   └── TaskContext.jsx
+│
+├── hooks/
+│   └── useLocalStorage.jsx
+│
+├── App.js
+├── index.js
+└── styles.css
+```
+
+---
+
+## 🧩 Drag and Drop Usage Example
+
+```js
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
+```
+
+The logic remains identical to `react-beautiful-dnd`.
+
+---
+
+## 🚢 Deployment
+
+The app is deployed using **Vercel** with automatic builds from the project.
+
+To deploy manually:
+
+```bash
+npm run build
+vercel deploy
+```
+
+---
+
+## ✅ Summary
+
+This project demonstrates:
+
+* React component architecture
+* State management
+* Drag and drop interactions
+* Deployment workflow
+
+---
+
+## 🌟 Future Improvements
+
+* Backend integration
+* User authentication
+* Persistent task storage (DB)
+* Multiple boards
+
+---
+
+## 🙌 Author
+
+Created by **Aryan Panwar**
